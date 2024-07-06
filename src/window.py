@@ -22,13 +22,11 @@ class Window():
         while self.is_running:
             self.redraw()
 
+    def draw_line(self, line, color):
+        line.draw(self.canvas, color)
+        
     def close(self):
         self.is_running = False
         self.widget.destroy()
         
-def main():
-    window = Window(1024, 768)
-    window.wait_for_close()
-        
-if __name__ == "__main__":
-    main()
+    
