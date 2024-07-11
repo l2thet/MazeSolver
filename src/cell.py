@@ -1,9 +1,9 @@
-from tkinter import Canvas
 from src.point import Point
+from src.window import Window
 
 
 class Cell():
-    def __init__(self, top_left: Point, bottom_right: Point, has_left_wall=False, has_right_wall=False, has_top_wall=False, has_bottom_wall=False, window=None):
+    def __init__(self, top_left: Point, bottom_right: Point, has_left_wall=False, has_right_wall=False, has_top_wall=False, has_bottom_wall=False, window : Window=None):
         self.has_left_wall = has_left_wall
         self.has_right_wall = has_right_wall
         self.has_top_wall = has_top_wall
@@ -27,6 +27,7 @@ class Cell():
             self._window.canvas.create_line(self._bottom_left.x, self._bottom_left.y, self._bottom_right.x, self._bottom_right.y, fill=color)
 
     def draw_move(self, to_cell, undo=False):
+              
         color = "red"
         if undo:
             color = "gray"

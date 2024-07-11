@@ -1,7 +1,4 @@
-from src.cell import Cell
-from src.line import Line
 from src.maze import Maze
-from src.point import Point
 from src.window import Window
 
 

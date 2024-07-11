@@ -1,6 +1,6 @@
 from tkinter import Tk, BOTH, Canvas
 
-from src.cell import Cell
+
 from src.line import Line
 
 class Window():
@@ -28,7 +28,7 @@ class Window():
     def draw_line(self, line: Line):
         line.draw(self.canvas)
         
-    def draw_cell(self, cell: Cell, color):
+    def draw_cell(self, cell, color):
         cell.draw(self.canvas, color)
         
     def close(self):
