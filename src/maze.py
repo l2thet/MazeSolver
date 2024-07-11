@@ -12,7 +12,7 @@ class Maze:
       num_cols,
       cell_size_x,
       cell_size_y,
-      win  
+      win = None  
     ):
         self.x1 = x1
         self.y1 = y1
@@ -32,17 +32,19 @@ class Maze:
             for j in range(self.num_cols):
                 top_left = Point(self.x1 + j * self.cell_size_x, self.y1 + i * self.cell_size_y)
                 bottom_right = Point(self.x1 + (j + 1) * self.cell_size_x, self.y1 + (i + 1) * self.cell_size_y)
-                cell = Cell(top_left, bottom_right, True, True, True, True)
+                cell = Cell(top_left, bottom_right, True, True, True, True, self.win)
                 row.append(cell)
-                self._cells.append(cell)
                 self._draw_cell(cell, "white")
             self._cells.append(row)
             
     
     def _draw_cell(self, cell, color):
-        cell.draw(self.win.canvas, color)
+        
+        cell.draw(color)
         self._animate()
         
     def _animate(self):
+        if self.win is None:
+            return
         self.win.redraw()
         sleep(0.05)
