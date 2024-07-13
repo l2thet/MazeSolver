@@ -15,7 +15,8 @@ def main():
     
     # cell_one.draw_move(window.canvas, cell_two)
     
-    maze = Maze(0, 0, 10, 10, 50, 50, window)
+    maze = Maze(10, 10, 10, 10, 50, 50, window)
+    #maze._cells[0][0].draw_move(maze._cells[9][9])
     
     window.wait_for_close()
         
